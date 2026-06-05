@@ -1,0 +1,1 @@
+package a.api; public class PublicApi { public static void hello(){ System.out.println("hello from lib-a"); } }

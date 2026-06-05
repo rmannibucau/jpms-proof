@@ -1,0 +1,1 @@
+package a.internal; public class Secret { private String value="TOP_SECRET"; public String value(){ return value; } }

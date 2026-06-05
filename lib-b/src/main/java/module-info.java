@@ -1,0 +1,1 @@
+module lib.b { exports b.api; }

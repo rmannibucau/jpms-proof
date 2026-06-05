@@ -1,0 +1,25 @@
+= JPMS Proof Project
+
+This project demonstrates JPMS isolation behavior.
+
+== What it shows
+
+* Non-exported packages cannot be imported.
+* Non-exported packages are not reflectively accessible by default.
+* A class may still be discoverable/loadable while members remain inaccessible.
+* --add-opens bypasses reflective encapsulation.
+
+== Build
+
+[source,bash]
+----
+mvn clean package
+----
+
+== Run
+
+[source,bash]
+----
+java --module-path lib-a/target/lib-a-1.0.jar:lib-b/target/lib-b-1.0.jar:app/target/app-1.0.jar      -m app/app.Main
+----
+

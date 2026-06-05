@@ -1,0 +1,1 @@
+package b.api; public class OtherApi { public static void ping(){ System.out.println("hello from lib-b"); } }
