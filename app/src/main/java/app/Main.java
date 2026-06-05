@@ -19,5 +19,13 @@ public class Main {
         try (final var res = Thread.currentThread().getContextClassLoader().getResourceAsStream("a/internal/Secret.class")) {
             System.out.println("class bytecode not encapsulated: " + res.readAllBytes().length);
         }
+
+        final var aModule = ModuleLayer.boot()
+                .findModule("lib.a")
+                .orElseThrow();
+        try (var res = aModule.getResourceAsStream("a/internal/Secret.class")) {
+            System.out.println("class bytecode not encapsulated via module api: "
+                    + res.readAllBytes().length);
+        }
     }
 }
